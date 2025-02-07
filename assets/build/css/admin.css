@@ -1,0 +1,98 @@
+/*!********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/admin.scss ***!
+  \********************************************************************************************************************************************************/
+/* Container */
+.opendirectory-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 10px;
+  /* Form Styles */
+  /* Field Container */
+}
+.opendirectory-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+.opendirectory-container .form-container {
+  display: flex;
+  flex-direction: column;
+}
+.opendirectory-container .field-container {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  /* Inputs & Select */
+  /* Focus Effects */
+  /* Checkbox */
+  /* Styling Checkbox Label */
+}
+.opendirectory-container .field-container label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+.opendirectory-container .field-container input[type=checkbox] {
+  --checkbox-size: 20px;
+  width: var(--checkbox-size) !important;
+  height: var(--checkbox-size);
+  position: relative;
+}
+.opendirectory-container .field-container input[type=checkbox]:checked::before {
+  content: "";
+  margin-right: 0 !important;
+  margin: 0 !important;
+  width: calc(var(--checkbox-size) - 10px);
+  height: calc(var(--checkbox-size) - 10px);
+  background: #4949af;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.opendirectory-container .field-container input, .opendirectory-container .field-container select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+.opendirectory-container .field-container input:focus, .opendirectory-container .field-container select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+.opendirectory-container .field-container input[type=checkbox] {
+  width: auto;
+  margin-right: 8px;
+}
+.opendirectory-container .field-container label[for=enable] {
+  display: flex;
+  align-items: center;
+}
+.opendirectory-container .submit-container button {
+  padding: 8px 16px;
+  border: 1px solid #122112;
+  background: #aaa;
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+}
+.opendirectory-container .submit-container button:hover {
+  background: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .opendirectory-container {
+    max-width: 90%;
+  }
+}
+
+/*# sourceMappingURL=admin.css.map*/

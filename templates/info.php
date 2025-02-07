@@ -11,5 +11,7 @@
 		<p><b>Enabled</b>: Yes</p>
 		<p><b>Directory For</b>: How to Waste Money</p>
 		<p><b>Total Items</b>: 400</p>
+		<p><b>Insert Rule</b>: Public</p>
+		<p><b>Directory Privacy</b>: Public</p>
 	</div>
 </div>
