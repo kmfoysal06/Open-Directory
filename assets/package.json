@@ -1,0 +1,46 @@
+{
+  "name": "open-directory",
+  "version": "1.0.0",
+  "description": "Open Directory WordPress Plugin",
+  "main": "main.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --mode production --progress",
+    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+    "clean": "rm -rf build/*",
+    "commit": "cz"
+  },
+  "keywords": [
+    "open-directory",
+    "wordpress",
+    "plugin"
+  ],
+  "author": "Kazi Mohammad Foysal",
+  "license": "GNU",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "",
+    "@babel/preset-env": "",
+    "@babel/preset-react": "",
+    "autoprefixer": "",
+    "babel-loader": "",
+    "clean-webpack-plugin": "",
+    "copy-webpack-plugin": "",
+    "cross-env": "",
+    "css-loader": "",
+    "file-loader": "",
+    "lodash": "",
+    "mini-css-extract-plugin": "",
+    "postcss-loader": "",
+    "sass": "",
+    "sass-loader": "",
+    "style-loader": "",
+    "webpack": "",
+    "webpack-cli": "4"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "postcss-nested": "^6.0.1"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"css/main.css","mappings":";;;AAAA;;EAAA;AAGA;EACC;EACA;EACA;AACD,C","sources":["webpack://open-directory/./src/scss/main.scss"],"sourcesContent":["/**\n * These styles will included in every files\n */\n* {\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing: border-box;\n}"],"names":[],"sourceRoot":""}
