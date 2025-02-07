@@ -6,6 +6,12 @@
  */
 
 echo var_dump(get_option("opendirectory_options"));
+$opendirectory_options = get_option("opendirectory_options");
+$opendirectory_enabled = ($opendirectory_options['enable'] && $opendirectory_options['enable'] === 'on') ? 'checked' : '';
+$opendirectory_name = $opendirectory_options['name'] ?? '';
+$opendirectory_insert_rules = $opendirectory_options['insert_rule'] ?? '';
+$opendirectory_privacy = $opendirectory_options['privacy'] ?? '';
+
 ?>
 <style>
 
@@ -19,11 +25,11 @@ echo var_dump(get_option("opendirectory_options"));
 			<input type="hidden" name="opendirectory_nonce" value="<?php echo esc_attr(wp_create_nonce("opendirectory__nonce")); ?>">
 			<div class="field-container">
 				<label for="enable">Enable Directory?</label>
-			    <input type="checkbox" name="opendirectory[enable]" id="enable" />
+			    <input type="checkbox" name="opendirectory[enable]" id="enable" <?php echo esc_attr($opendirectory_enabled); ?> />
 			</div>
 			<div class="field-container">
 				<label for="name">Directory For?</label>
-			    <input type="text" name="opendirectory[name]" placeholder="eg: Project Ideas/SaaS Ideas" id="name" />
+			    <input type="text" name="opendirectory[name]" placeholder="eg: Project Ideas/SaaS Ideas" id="name" value="<?php echo esc_attr($opendirectory_name); ?>" />
 			</div>
 			<div class="field-container">
 				<label for="insert-rule">Insert Rule</label>
