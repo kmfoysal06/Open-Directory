@@ -21,11 +21,8 @@ $opendirectory_posts = new \WP_Query([
 
 ?>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        background-color: #f8f9fa;
-        color: #333;
+    .post-title, .post-meta {
+        display: none;
     }
 
     .container {
@@ -62,15 +59,16 @@ $opendirectory_posts = new \WP_Query([
     }
 </style>
 <div class="container">
-    <h1>Listing Page</h1>
+    <h1><?php echo esc_html($opendirectory_name); ?></h1>
     <?php
 	    if($opendirectory_posts->have_posts()):
 			while($opendirectory_posts->have_posts()):
 				$opendirectory_posts->the_post();
+				$user_name = get_the_author_meta("user_login");
 	?>
 			    <div class="item">
-			        <div class="username">@kmfoysal06</div>
-			        <p class="text"><?php echo get_the_title(); ?></p>
+			        <div class="username">@<?php echo esc_html($user_name); ?></div>
+			        <p class="text"><?php echo esc_html(get_the_title()); ?></p>
 			    </div>
 
     <?php

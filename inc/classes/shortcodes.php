@@ -35,7 +35,10 @@ use OPENDIRECTORY\Inc\Traits\Singleton;
     	}
 
     	if($attr['type'] === 'insert') {
-    		return 'this is insert';
+    		ob_start();
+    		include OPENDIRECTORY_PATH . "/templates/insert-form.php";
+    		$output =  ob_get_clean();
+    		return $output;
     	}
     }
  }

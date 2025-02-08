@@ -40,7 +40,7 @@ $opendirectory_privacy = $opendirectory_options['privacy'] ?? '';
 			    	<option value="non-user" <?php echo opendirectory_compare_select($opendirectory_insert_rules, 'non-user'); ?>>Registered and Non Registered</option>
 			    	<option value="user" <?php echo opendirectory_compare_select($opendirectory_insert_rules, 'user'); ?>>Only Users</option>
 			    	<option value="admin" <?php echo opendirectory_compare_select($opendirectory_insert_rules, 'admin'); ?>>Only Admin</option>
-			    	<option value="unknown" <?php echo opendirectory_compare_select($opendirectory_insert_rules, 'unknown'); ?>>Nobody</option>
+			    	<option value="nobody" <?php echo opendirectory_compare_select($opendirectory_insert_rules, 'nobody'); ?>>Nobody</option>
 			    </select>
 			</div>
 			<div class="field-container">
