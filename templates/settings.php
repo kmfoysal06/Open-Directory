@@ -7,7 +7,7 @@
 
 // echo var_dump(get_option("opendirectory_options"));
 $opendirectory_options = get_option("opendirectory_options");
-$opendirectory_enabled = ($opendirectory_options['enable'] && $opendirectory_options['enable'] === 'on') ? 'checked' : '';
+$opendirectory_enabled = (isset($opendirectory_options['enable']) && $opendirectory_options['enable'] === 'on') ? 'checked' : '';
 $opendirectory_name = $opendirectory_options['name'] ?? '';
 $opendirectory_insert_rules = $opendirectory_options['insert_rule'] ?? '';
 $opendirectory_privacy = $opendirectory_options['privacy'] ?? '';
