@@ -11,6 +11,7 @@ Class Opendir {
 	public function __construct() {
 		Assets::get_instance();
 		Setup::get_instance();
+		PostType::get_instance();
 
 		$this->setup_hooks();
 	}
