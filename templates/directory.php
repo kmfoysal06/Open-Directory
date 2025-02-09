@@ -20,46 +20,26 @@ $opendirectory_posts = new \WP_Query([
 
 
 ?>
-<style>
-    .post-title, .post-meta {
-        display: none;
-    }
+<div class="opendirectory-list-container">
+	<?php if($opendirectory_privacy === "private"): ?>
+    	<div class="container">
+	        <h2>You Are Not Allowed to This Page</h2>
+	    </div>
+	<?php return;endif; ?>
 
-    .container {
-        max-width: 800px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-    }
+	<?php if($opendirectory_privacy === "admin" && !current_user_can('administrator')): ?>
+    	<div class="container">
+	        <h2>You Are Not Allowed to This Page</h2>
+	    </div>
+	<?php return;endif; ?>
 
-    h1 {
-        text-align: center;
-        color: #007bff;
-    }
+	<?php if($opendirectory_privacy === "user" && !is_user_logged_in()): ?>
+    	<div class="container">
+	        <h2>You Are Not Allowed to This Page</h2>
+	    </div>
+	<?php return;endif; ?>
 
-    .item {
-        margin-bottom: 20px;
-        padding: 15px;
-        border-left: 4px solid #007bff;
-        background: #f1f1f1;
-        border-radius: 4px;
-    }
-
-    .username {
-        font-weight: bold;
-        color: #555;
-        margin-bottom: 5px;
-    }
-
-    .text {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-</style>
-<div class="container">
-    <h1><?php echo esc_html($opendirectory_name); ?></h1>
+	<h1><?php echo esc_html($opendirectory_name); ?></h1>
     <?php
 	    if($opendirectory_posts->have_posts()):
 			while($opendirectory_posts->have_posts()):
@@ -76,5 +56,4 @@ $opendirectory_posts = new \WP_Query([
 		endif;
 		wp_reset_query();
      ?>
-
 </div>

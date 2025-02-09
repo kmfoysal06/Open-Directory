@@ -20,6 +20,9 @@
   text-align: center;
   color: #007bff;
 }
+.opendirectory-list-container h2 {
+  text-align: center;
+}
 .opendirectory-list-container .item {
   margin-bottom: 20px;
   padding: 15px;

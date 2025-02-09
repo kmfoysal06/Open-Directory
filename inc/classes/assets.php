@@ -13,9 +13,19 @@ Class Assets {
 	}
 	public function setup_hooks() {
 		add_action("admin_enqueue_scripts", [$this, 'admin_style']);
+		add_action("wp_enqueue_scripts", [$this, 'public_styles']);
 	}
 	public function public_styles() {
-
+		/**
+		 * Styles for Directory List and Insert Page
+		 */
+		global $post;
+		wp_register_style("opendirectory_listing_page", OPENDIRECTORY_URL . "/assets/build/css/listing.css", [], filemtime(OPENDIRECTORY_PATH . "/assets/build/css/listing.css"), 'all' );
+		if(is_page()) {
+			if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'opendirectory') ) {
+					wp_enqueue_style( 'opendirectory_listing_page');
+				}
+		}
 	}
 	public function admin_style() {
 		if($this->is_my_pages()) {
