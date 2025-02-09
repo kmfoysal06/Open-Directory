@@ -13,6 +13,7 @@ Class Opendir {
 		Setup::get_instance();
         PostType::get_instance();
 		Shortcodes::get_instance();
+		Actions::get_instance();
 
 		$this->setup_hooks();
 	}

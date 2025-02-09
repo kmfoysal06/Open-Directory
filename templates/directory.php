@@ -44,7 +44,7 @@ $opendirectory_posts = new \WP_Query([
 	    if($opendirectory_posts->have_posts()):
 			while($opendirectory_posts->have_posts()):
 				$opendirectory_posts->the_post();
-				$user_name = get_the_author_meta("user_login");
+				$user_name = get_post_meta(get_the_ID(), 'odir_usrename', true) ?? get_the_author_meta("user_login");
 	?>
 			    <div class="item">
 			        <div class="username">@<?php echo esc_html($user_name); ?></div>

@@ -15,6 +15,7 @@ const entry = {
   main: JS_DIR + '/main.js',
   admin: JS_DIR + '/admin.js',
   listing: JS_DIR + '/listing-page.js',
+  insert: JS_DIR + '/add-item.js',
   // search: JS_DIR + '/search.js',
   // customizer: JS_DIR + '/customizer.js',
 }

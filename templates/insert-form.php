@@ -31,16 +31,18 @@ $opendirectory_total_items = wp_count_posts($opendirectory_slug)->publish ?? 0;
             </div>
         <?php return;endif; ?>
 
-        <form action="#" method="post">
+        <form method="post">
             <h2>Add New Data to <?php echo esc_html($opendirectory_name) ?></h2>
             <?php if(!is_user_logged_in()): ?>
-                <label for="uname">Insert Your Name<?php echo $opendirectory_insert_rules !== 'unknown' ? "*" : "" ?></label>
-                <input type="text" name="username" placeholder="alex.." <?php echo $opendirectory_insert_rules !== 'unknown' ? "required" : "" ?>>
+                <div class="odir-username-container">
+                    <label for="uname">Insert Your Name<?php echo $opendirectory_insert_rules !== 'unknown' ? "*" : "" ?></label>
+                    <input type="text" name="username" class="odir_uname" placeholder="alex.." <?php echo $opendirectory_insert_rules !== 'unknown' ? "required" : "" ?> />
+                </div>
             <?php endif; ?>
             <label for="post">Your Post:</label>
-            <textarea id="post" name="post" rows="6" placeholder="Write something..." required></textarea>
+            <textarea id="post" class="odir_post" name="post" rows="6" placeholder="Write something..." required></textarea>
 
-            <button type="submit">Submit</button>
+            <button type="button" class="odir_submit">Submit</button>
         </form>
     <?php endif; ?>
 </div>
