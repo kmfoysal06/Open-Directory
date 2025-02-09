@@ -14,6 +14,7 @@ const BUILD_DIR = path.resolve(__dirname, 'build')
 const entry = {
   main: JS_DIR + '/main.js',
   admin: JS_DIR + '/admin.js',
+  listing: JS_DIR + '/listing-page.js',
   // search: JS_DIR + '/search.js',
   // customizer: JS_DIR + '/customizer.js',
 }
