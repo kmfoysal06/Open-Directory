@@ -59,6 +59,6 @@ $opendirectory_posts = new \WP_Query([
     <?php
 			endwhile;
 		endif;
-		wp_reset_query();
+		wp_reset_postdata();
      ?>
 </div>
