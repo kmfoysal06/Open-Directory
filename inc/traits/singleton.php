@@ -7,6 +7,11 @@
 
 namespace OPENDIRECTORY\Inc\Traits;
 
+/**
+ * Exit if accessed directly
+ */
+if(!defined("ABSPATH")) exit;
+
 trait Singleton{
     public function __construct(){}
     public function __clone(){}

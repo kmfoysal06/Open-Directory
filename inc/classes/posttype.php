@@ -6,6 +6,12 @@
  */
 
 namespace OPENDIRECTORY\Inc\Classes;
+
+/**
+ * Exit if accessed directly
+ */
+if(!defined("ABSPATH")) exit;
+
 use OPENDIRECTORY\Inc\Traits\Singleton;
  class PostType {
      use Singleton;

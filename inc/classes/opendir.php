@@ -5,6 +5,12 @@
  * @since 1.0
  */
 namespace OPENDIRECTORY\Inc\Classes;
+
+/**
+ * Exit if accessed directly
+ */
+if(!defined("ABSPATH")) exit;
+
 use OPENDIRECTORY\Inc\Traits\Singleton;
 Class Opendir {
 	use Singleton;

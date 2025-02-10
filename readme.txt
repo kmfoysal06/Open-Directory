@@ -13,9 +13,6 @@ Provide you a listing and insert listing in front side of your WordPress site an
 === Description ==
 Provide you a listing and insert listing in front side and you can control how user insert list or the directory privacy.
 
-
-
-
 === Installation ===
 1. Upload the `open-directory` Folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.

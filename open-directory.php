@@ -6,7 +6,7 @@
  * Description: Open Directory is a WordPress Plugin That Provide Users a Route to Host A Directory Listing of Anything.
  * Author: Kazi Mohammad Foysal
  * Author URI: https://profiles.wordpress.org/kmfoysal06
- * Tags: charming-portfolio, portfolio-plugin, simple-portfolio
+ * Tags: opendirectory, directory listing
  * Requires at least: 5.0
  * Version: 1.0
  * Tested up to: 6.7

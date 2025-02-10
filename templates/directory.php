@@ -5,6 +5,11 @@
  * @since 1.00
  */
 
+/**
+ * Exit if accessed directly
+ */
+if(!defined("ABSPATH")) exit;
+
 $opendirectory_options = get_option("opendirectory_options");
 $opendirectory_enabled = ($opendirectory_options['enable'] && $opendirectory_options['enable'] === 'on') ? true : false;
 $opendirectory_name = $opendirectory_options['name'] ?? '';

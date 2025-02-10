@@ -5,6 +5,11 @@
  * @since 1.00
  */
 
+/**
+ * Exit if accessed directly
+ */
+if(!defined("ABSPATH")) exit;
+
 // echo var_dump(get_option("opendirectory_options"));
 $opendirectory_options = get_option("opendirectory_options");
 $opendirectory_enabled = (isset($opendirectory_options['enable']) && $opendirectory_options['enable'] === 'on') ? 'checked' : '';
