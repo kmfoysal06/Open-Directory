@@ -68,7 +68,10 @@ Class Setup {
                 return;
             }
 
-            $modified_data = (isset($_POST['opendirectory']) && !empty($_POST['opendirectory'])) ? $this->sanitize_array(wp_unslash($_POST['opendirectory'])) : '';
+            if(!(isset($_POST['opendirectory']) && !empty($_POST['opendirectory']))){
+                return;
+            }
+            $modified_data = $this->sanitize_array(wp_unslash($_POST['opendirectory']));
 
             // check for name is valid and it should between 2 to 20 words
             if (!preg_match("/^[a-zA-Z\s]{2,30}$/", $modified_data['name'])) {

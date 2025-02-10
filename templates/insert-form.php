@@ -36,7 +36,7 @@ $opendirectory_total_items = wp_count_posts($opendirectory_slug)->publish ?? 0;
             <?php if(!is_user_logged_in()): ?>
                 <div class="odir-username-container">
                     <label for="uname">Insert Your Name<?php echo $opendirectory_insert_rules !== 'unknown' ? "*" : "" ?></label>
-                    <input type="text" name="username" class="odir_uname" placeholder="alex.." <?php echo $opendirectory_insert_rules !== 'unknown' ? "required" : "" ?> />
+                    <input type="text" id="uname" name="username" class="odir_uname" placeholder="alex.." <?php echo $opendirectory_insert_rules !== 'unknown' ? "required" : "" ?> autocomplete="false" />
                 </div>
             <?php endif; ?>
             <label for="post">Your Post:</label>
