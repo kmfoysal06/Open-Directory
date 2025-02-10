@@ -27,14 +27,6 @@ const output = {
 const plugins = (argv) => [
   new MiniCssExtractPlugin({
     filename: 'css/[name].css'
-  }),
-  new CopyPlugin({
-    patterns: [
-      {
-        from: path.join(IMG_DIR, '/'),
-        to: path.join(BUILD_DIR, 'img')
-      },
-    ]
   })
 ]
 

@@ -41,7 +41,7 @@ use OPENDIRECTORY\Inc\Traits\Singleton;
             'labels'      => array(
                 'name'          => $this->opendirectory_name,
             ),
-                'public'      => true, //will be false later
+                'public'      => false,
                 'has_archive' => false, 
             ]);
         }

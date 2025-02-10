@@ -23,10 +23,10 @@ use OPENDIRECTORY\Inc\Traits\Singleton;
     	/**
     	 * Process to Create Post
     	 */
-    	$username  = $_POST['username'];
-    	$postdata  = $_POST['post'] ?? '';
-    	$logged_in = $_POST['logged_in'] ?? false;
-    	$is_admin  = $_POST['is_admin'] ?? false;
+    	$username  = (isset($_POST['username']) && !empty($_POST['username'])) ? sanitize_user(wp_unslash($_POST['username'])) : '';
+    	$postdata  = (isset($_POST['post']) && !empty($_POST['post'])) ? sanitize_user(wp_unslash($_POST['post'])) : '';
+    	$logged_in = (isset($_POST['logged_in']) && !empty($_POST['logged_in'])) ? sanitize_user(wp_unslash($_POST['logged_in'])) : '';
+    	$is_admin  = (isset($_POST['is_admin']) && !empty($_POST['is_admin'])) ? sanitize_user(wp_unslash($_POST['is_admin'])) : '';
 
     	if(PostType::get_instance()->opendirectory_insert_rules !== 'unknown') {
     		if(empty($username)) {
@@ -47,7 +47,7 @@ use OPENDIRECTORY\Inc\Traits\Singleton;
     	}
 
         $post_id = wp_insert_post( [
-          'post_title'    => sanitize_text_field($postdata),
+          'post_title'    => $postdata,
 	      'post_status'   => 'publish',
 	      'post_author'   => 1,
 	      'post_type'     => PostType::get_instance()->opendirectory_slug,

@@ -16,6 +16,8 @@ Class Setup {
 		add_action("admin_menu", [$this, "add_submenu"]);
 
 		add_action("admin_init", [$this, "save_settings"]);
+
+        add_filter("template_include", [$this, "template_override"]);
 	}
 	public function add_menu() {
         add_menu_page(
@@ -66,7 +68,7 @@ Class Setup {
                 return;
             }
 
-            $modified_data = $this->sanitize_array(wp_unslash($_POST['opendirectory']));
+            $modified_data = (isset($_POST['opendirectory']) && !empty($_POST['opendirectory'])) ? $this->sanitize_array(wp_unslash($_POST['opendirectory'])) : '';
 
             // check for name is valid and it should between 2 to 20 words
             if (!preg_match("/^[a-zA-Z\s]{2,30}$/", $modified_data['name'])) {
@@ -95,5 +97,24 @@ Class Setup {
         } else {
             return is_scalar($input_array) ? sanitize_text_field($input_array) : $input_array;
         }
+    }
+
+    /**
+     * OverRide Page Template for The Directory
+     */
+    public function template_override($template)
+    {
+        global $post;
+        if(is_page()) {
+            if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'opendirectory') ){
+                $new_template = OPENDIRECTORY_PATH . '/templates/pages-opendir.php';
+                if ('' != $new_template) {
+                    return $new_template;
+                }
+                return $template;
+            }
+                return $template;
+        }
+        return $template;
     }
 }
