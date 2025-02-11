@@ -80,9 +80,9 @@ Class Setup {
             $modified_data = $this->sanitize_array(wp_unslash($_POST['opendirectory']));
 
             // check for name is valid and it should between 2 to 20 words
-            if (!preg_match("/^[a-zA-Z\s]{2,30}$/", $modified_data['name'])) {
+            if (!preg_match("/^[a-zA-Z\s]{2,15}$/", $modified_data['name'])) {
                 add_action('admin_notices', function () {
-                    echo '<div class="notice notice-error is-dismissible"><p>'.esc_html("Name is not valid! It should be between 2 to 20 words").'</p></div>';
+                    echo '<div class="notice notice-error is-dismissible"><p>'.esc_html("Name is not valid! It should be between 2 to 15 words").'</p></div>';
                 });
                 return;
             }

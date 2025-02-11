@@ -36,7 +36,7 @@ $opendirectory_privacy = $opendirectory_options['privacy'] ?? '';
 			</div>
 			<div class="field-container">
 				<label for="name">Directory For?</label>
-			    <input type="text" name="opendirectory[name]" placeholder="eg: Project Ideas/SaaS Ideas" id="name" value="<?php echo esc_attr($opendirectory_name); ?>" />
+			    <input type="text" name="opendirectory[name]" placeholder="eg: Project Ideas/SaaS Ideas" id="name" value="<?php echo esc_attr($opendirectory_name); ?>"  max="15" min="2"/>
 			</div>
 			<div class="field-container">
 				<label for="insert-rule">Insert Rule</label>

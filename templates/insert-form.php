@@ -11,7 +11,15 @@
 if(!defined("ABSPATH")) exit;
 
 $opendirectory_options = get_option("opendirectory_options");
-$opendirectory_enabled = ($opendirectory_options['enable'] && $opendirectory_options['enable'] === 'on') ? true : false;
+$opendirectory_enabled = false;
+/**
+ * Check if the directory enabled
+ */
+if(isset($opendirectory_options['enable'])) {
+	if($opendirectory_options['enable'] === 'on') {
+		$opendirectory_enabled = true;
+	} 
+}
 $opendirectory_name = $opendirectory_options['name'] ?? '';
 $opendirectory_insert_rules = $opendirectory_options['insert_rule'] ?? 'Everyone';
 $opendirectory_privacy = $opendirectory_options['privacy'] ?? 'Everyone';
