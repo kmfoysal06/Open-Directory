@@ -8,23 +8,25 @@
 /**
  * Exit if accessed directly
  */
-if(!defined("ABSPATH")) exit;
+if (!defined("ABSPATH")) {
+    exit;
+}
 
 $opendirectory_options = get_option("opendirectory_options");
 $opendirectory_enabled = "Yes";
 /**
  * Check if the directory enabled
  */
-if(isset($opendirectory_options['enable'])) {
-	if($opendirectory_options['enable'] === 'on') {
-		$opendirectory_enabled = 'Yes';
-	} 
+if (isset($opendirectory_options['enable'])) {
+    if ($opendirectory_options['enable'] === 'on') {
+        $opendirectory_enabled = 'Yes';
+    }
 }
 $opendirectory_name = $opendirectory_options['name'] ?? '';
 $opendirectory_insert_rules = $opendirectory_options['insert_rule'] ?? 'Everyone';
 $opendirectory_privacy = $opendirectory_options['privacy'] ?? 'Everyone';
 $opendirectory_slug = !empty($opendirectory_name) ? sanitize_title('odir_' . $opendirectory_name) : 'odir';
-$opendirectory_total_items = wp_count_posts($opendirectory_slug)->publish ?? 0;
+$opendirectory_total_items = wp_count_posts("opendirectory_pt")->publish ?? 0;
 ?>
 <div class="container">
 	<h2>Open Directory</h2>

@@ -8,7 +8,9 @@
 /**
  * Exit if accessed directly
  */
-if(!defined("ABSPATH")) exit;
+if(!defined("ABSPATH")) {
+    exit;
+}
 
 $opendirectory_options = get_option("opendirectory_options");
 $opendirectory_enabled = false;
@@ -16,15 +18,15 @@ $opendirectory_enabled = false;
  * Check if the directory enabled
  */
 if(isset($opendirectory_options['enable'])) {
-	if($opendirectory_options['enable'] === 'on') {
-		$opendirectory_enabled = true;
-	} 
+    if($opendirectory_options['enable'] === 'on') {
+        $opendirectory_enabled = true;
+    }
 }
 $opendirectory_name = $opendirectory_options['name'] ?? '';
 $opendirectory_insert_rules = $opendirectory_options['insert_rule'] ?? 'Everyone';
 $opendirectory_privacy = $opendirectory_options['privacy'] ?? 'Everyone';
-$opendirectory_slug = !empty($opendirectory_name) ? sanitize_title('odir_' . $opendirectory_name) : 'odir';
-$opendirectory_total_items = wp_count_posts($opendirectory_slug)->publish ?? 0;
+$opendirectory_list_page = get_permalink(get_page_by_path('odir_list_page'));
+
 
 ?>
 <div class="opendir-insert-container">
@@ -59,3 +61,4 @@ $opendirectory_total_items = wp_count_posts($opendirectory_slug)->publish ?? 0;
         </form>
     <?php endif; ?>
 </div>
+<a href="<?php echo esc_url($opendirectory_list_page) ?>"><?php echo esc_html("All " . $opendirectory_name); ?></a>

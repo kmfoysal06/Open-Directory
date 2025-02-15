@@ -8,7 +8,9 @@
 /**
  * Exit if accessed directly
  */
-if(!defined("ABSPATH")) exit;
+if(!defined("ABSPATH")) {
+    exit;
+}
 
 
 get_header();
@@ -53,12 +55,16 @@ if (have_posts()) :
             'button' => [
                 'type' => [],
                 'class' => [],
-            ], 
+            ],
             'form' => [
                 'method' => []
             ],
+            "a" => [
+                "href" => []
+            ]
         ]); ?></div>
 </div>
+<span class="opendirectory_alert"></span>
 <?php
     endwhile;
 else:
