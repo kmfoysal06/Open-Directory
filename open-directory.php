@@ -9,7 +9,7 @@
  * Author URI: https://profiles.wordpress.org/kmfoysal06
  * Tags: opendirectory, directory listing
  * Requires at least: 5.0
- * Version: 1.1
+ * Version: 1.2
  * Tested up to: 6.7
  * Stable tag: 1.0
  * Requires PHP: 7.0
