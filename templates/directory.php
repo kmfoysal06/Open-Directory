@@ -42,6 +42,13 @@ $opendirectory_insert_page = get_permalink(get_page_by_path('opendirectory_inser
 	    </div>
 	<?php return;endif; ?>
 
+	<?php if(!$opendirectory_enabled): ?>
+    	<div class="container">
+	        <h2>The Directory is Not Enabled!</h2>
+	    </div>
+	<?php return;endif; ?>
+
+
 	<?php if($opendirectory_privacy === "admin" && !current_user_can('administrator')): ?>
     	<div class="container">
 	        <h2>You Are Not Allowed to This Page</h2>

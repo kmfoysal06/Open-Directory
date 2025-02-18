@@ -13,7 +13,7 @@ if (!defined("ABSPATH")) {
 }
 
 $opendirectory_options = get_option("opendirectory_options");
-$opendirectory_enabled = "Yes";
+$opendirectory_enabled = "No";
 /**
  * Check if the directory enabled
  */
@@ -25,7 +25,6 @@ if (isset($opendirectory_options['enable'])) {
 $opendirectory_name = $opendirectory_options['name'] ?? '';
 $opendirectory_insert_rules = $opendirectory_options['insert_rule'] ?? 'Everyone';
 $opendirectory_privacy = $opendirectory_options['privacy'] ?? 'Everyone';
-$opendirectory_slug = !empty($opendirectory_name) ? sanitize_title('odir_' . $opendirectory_name) : 'odir';
 $opendirectory_total_items = wp_count_posts("opendirectory_pt")->publish ?? 0;
 ?>
 <div class="container">

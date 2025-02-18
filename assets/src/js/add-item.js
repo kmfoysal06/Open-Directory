@@ -39,7 +39,7 @@
       }
     });
   } catch (e) {
-    showAlert("Cannot Add The Item. Please Try Again Later", true);
+    showAlert("There is a Error! You Might Not Allowed to Add New List Item!", true);
   }
 
   function resetAlert() {

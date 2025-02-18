@@ -36,9 +36,9 @@ class PostType
     {
         if ($this->opendirectory_enabled && !empty($this->opendirectory_name) && !empty($this->opendirectory_slug)) {
             add_action("init", [$this, "directory_posttype"]);
+            add_action("init", [$this, "add_listing_page"]);
+            add_action("init", [$this, "add_insert_page"]);
         }
-        add_action("init", [$this, "add_listing_page"]);
-        add_action("init", [$this, "add_insert_page"]);
     }
     public function retrieve_directory_settings()
     {

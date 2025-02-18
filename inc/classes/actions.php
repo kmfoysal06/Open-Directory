@@ -43,6 +43,10 @@ class Actions
         $logged_in = (isset($_POST['logged_in']) && !empty($_POST['logged_in'])) ? sanitize_user(wp_unslash($_POST['logged_in'])) : '';
         $is_admin  = (isset($_POST['is_admin']) && !empty($_POST['is_admin'])) ? sanitize_user(wp_unslash($_POST['is_admin'])) : '';
 
+        if (!PostType::get_instance()->opendirectory_enabled) {
+            wp_send_json_error();
+        }
+
         if (PostType::get_instance()->opendirectory_insert_rules !== 'unknown') {
             if (empty($username)) {
                 wp_send_json_error();

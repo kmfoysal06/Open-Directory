@@ -30,6 +30,12 @@ $opendirectory_list_page = get_permalink(get_page_by_path('opendirectory_list'))
 
 ?>
 <div class="opendir-insert-container">
+     <?php if(!$opendirectory_enabled): ?>
+        <div class="container">
+            <h2>Directory is Not Enabled Now :') </h2>
+        </div>
+    <?php return;endif; ?>
+
     <?php if($opendirectory_insert_rules === 'nobody'): ?>
         <div class="container">
             <h2>You Are Not Allowed to This Page</h2>
