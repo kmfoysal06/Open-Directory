@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package Open Directory
  * @since 1.0
@@ -8,7 +9,7 @@
  * Author URI: https://profiles.wordpress.org/kmfoysal06
  * Tags: opendirectory, directory listing
  * Requires at least: 5.0
- * Version: 1.0
+ * Version: 1.1
  * Tested up to: 6.7
  * Stable tag: 1.0
  * Requires PHP: 7.0
@@ -20,7 +21,9 @@
 /**
  * Exit if accessed directly
  */
-if(!defined("ABSPATH")) exit;
+if (!defined("ABSPATH")) {
+    exit;
+}
 
 /**
  * Constants
@@ -37,8 +40,9 @@ require_once OPENDIRECTORY_PATH . "/inc/helper/autoload.php";
  */
 require_once OPENDIRECTORY_PATH . "/inc/helper/template-tags.php";
 
-function opendirectory_get_instance() {
-	return \OPENDIRECTORY\Inc\Classes\Opendir::get_instance();
+function opendirectory_get_instance()
+{
+    return \OPENDIRECTORY\Inc\Classes\Opendir::get_instance();
 }
 
 opendirectory_get_instance();

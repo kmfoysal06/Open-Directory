@@ -32,7 +32,7 @@ $opendirectory_posts = new \WP_Query([
     'posts_per_page' => '-1',
     'post_status' => 'publish'
 ]);
-$opendirectory_insert_page = get_permalink(get_page_by_path('odir_insert_page'));
+$opendirectory_insert_page = get_permalink(get_page_by_path('opendirectory_insert'));
 
 ?>
 <div class="opendirectory-list-container">
@@ -67,8 +67,8 @@ $opendirectory_insert_page = get_permalink(get_page_by_path('odir_insert_page'))
 			    </div>
 
     <?php
-			endwhile;
-		endif;
-		wp_reset_postdata();
-     ?>
+            endwhile;
+        endif;
+wp_reset_postdata();
+?>
 </div>

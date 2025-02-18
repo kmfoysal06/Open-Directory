@@ -25,7 +25,7 @@ if(isset($opendirectory_options['enable'])) {
 $opendirectory_name = $opendirectory_options['name'] ?? '';
 $opendirectory_insert_rules = $opendirectory_options['insert_rule'] ?? 'Everyone';
 $opendirectory_privacy = $opendirectory_options['privacy'] ?? 'Everyone';
-$opendirectory_list_page = get_permalink(get_page_by_path('odir_list_page'));
+$opendirectory_list_page = get_permalink(get_page_by_path('opendirectory_list'));
 
 
 ?>

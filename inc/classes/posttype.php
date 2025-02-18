@@ -64,13 +64,13 @@ class PostType
     {
         $list_page_name = $this->opendirectory_name . " List";
         $list_page_slug = $this->opendirectory_slug . "_list" ;
-        $this->new_page($list_page_name, 'odir_list_page', '[opendirectory type="list"]');
+        $this->new_page($list_page_name, 'opendirectory_list', '[opendirectory type="list"]');
     }
     public function add_insert_page()
     {
         $insert_page_name = $this->opendirectory_name . " insert";
         $insert_page_slug = $this->opendirectory_slug . "_insert" ;
-        $this->new_page($insert_page_name, 'odir_insert_page', '[opendirectory type="insert"]');
+        $this->new_page($insert_page_name, 'opendirectory_insert', '[opendirectory type="insert"]');
     }
     public function new_page($pageName, $slug, $content)
     {
