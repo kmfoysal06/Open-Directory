@@ -66,7 +66,7 @@ use OPENDIRECTORY\Inc\Traits\Singleton;
               'post_name'     => $slug
             );
             wp_insert_post( $createPage );
-             flush_rewrite_rules();
+            //  flush_rewrite_rules();
         }else {
             $existingPage = get_page_by_path("/" . $slug);
             $post_content = apply_filters('the_content', $existingPage->post_content); 

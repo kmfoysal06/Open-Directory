@@ -15,11 +15,6 @@ $opendirectory_privacy = $opendirectory_options['privacy'] ?? '';
 
 
 ?>
-<style>
-
-
-
-</style>
 <div class="opendirectory-container">
 	<h2>Customize Directory</h2>
 	<div class="form-container">
