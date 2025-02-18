@@ -5,6 +5,12 @@
  * @since 1.0
  */
 namespace OPENDIRECTORY\Inc\Classes;
+
+/**
+ * Exit if accessed directly
+ */
+if(!defined("ABSPATH")) exit;
+
 use OPENDIRECTORY\Inc\Traits\Singleton;
 Class Assets {
 	use Singleton;
@@ -19,11 +25,26 @@ Class Assets {
 		/**
 		 * Styles for Directory List and Insert Page
 		 */
-		global $post;
+
 		wp_register_style("opendirectory_listing_page", OPENDIRECTORY_URL . "/assets/build/css/listing.css", [], filemtime(OPENDIRECTORY_PATH . "/assets/build/css/listing.css"), 'all' );
+		wp_register_script("opendirectory_insert_item", OPENDIRECTORY_URL . "/assets/build/js/insert.js", [], filemtime(OPENDIRECTORY_PATH . "/assets/build/js/insert.js"), true );
+
+		wp_localize_script("opendirectory_insert_item", "odir_ajax", [
+			'nonce'     => wp_create_nonce("odir_add_item"),
+			'url'       => admin_url("admin-ajax.php"),
+			'logged_in' => is_user_logged_in(),
+			'is_admin'  => current_user_can('administrator'),
+			'username'  => wp_get_current_user()->user_login
+		]);
+
+		global $post;
 		if(is_page()) {
 			if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'opendirectory') ) {
 					wp_enqueue_style( 'opendirectory_listing_page');
+
+					if(strpos($post->post_content, 'insert')) {
+						wp_enqueue_script("opendirectory_insert_item");
+					}
 				}
 		}
 	}

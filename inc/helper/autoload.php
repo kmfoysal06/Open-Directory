@@ -4,6 +4,12 @@
  * @package Open Directory
  * @since 1.0
  */
+
+/**
+ * Exit if accessed directly
+ */
+if(!defined("ABSPATH")) exit;
+
 spl_autoload_register('opendirectory_autoloader');
 function opendirectory_autoloader($class) {
 	$namespace = 'OPENDIRECTORY';

@@ -1,10 +1,22 @@
 <?php
 /**
+ * @package Open Directory
+ * @since 1.0
  * Plugin Name: Open Directory
- * Author: Kazi Mohammad Foysal
- * Version: 1.0
  * Description: Open Directory is a WordPress Plugin That Provide Users a Route to Host A Directory Listing of Anything.
+ * Author: Kazi Mohammad Foysal
+ * Author URI: https://profiles.wordpress.org/kmfoysal06
+ * Tags: opendirectory, directory listing
+ * Requires at least: 5.0
+ * Version: 1.0
+ * Tested up to: 6.7
+ * Stable tag: 1.0
+ * Requires PHP: 7.0
+ * License: GPLv3
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  */
+
+
 /**
  * Exit if accessed directly
  */
