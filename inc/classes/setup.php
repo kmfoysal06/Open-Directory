@@ -1,31 +1,40 @@
 <?php
+
 /**
  * Setup plugin features
  * @package Open Directory
  * @since 1.0
  */
+
 namespace OPENDIRECTORY\Inc\Classes;
 
 /**
  * Exit if accessed directly
  */
-if(!defined("ABSPATH")) exit;
+if (!defined("ABSPATH")) {
+    exit;
+}
 
 use OPENDIRECTORY\Inc\Traits\Singleton;
-Class Setup {
-	use Singleton;
-	public function __construct() {
-		$this->setup_hook();
-	}
-	public function setup_hook() {
-		add_action("admin_menu", [$this, "add_menu"]);
-		add_action("admin_menu", [$this, "add_submenu"]);
 
-		add_action("admin_init", [$this, "save_settings"]);
+class Setup
+{
+    use Singleton;
+    public function __construct()
+    {
+        $this->setup_hook();
+    }
+    public function setup_hook()
+    {
+        add_action("admin_menu", [$this, "add_menu"]);
+        add_action("admin_menu", [$this, "add_submenu"]);
+
+        add_action("admin_init", [$this, "save_settings"]);
 
         add_filter("template_include", [$this, "template_override"]);
-	}
-	public function add_menu() {
+    }
+    public function add_menu()
+    {
         add_menu_page(
             'Open Directory',
             "Open Directory",
@@ -35,7 +44,8 @@ Class Setup {
             "dashicons-portfolio"
         );
     }
-    public function add_submenu() {
+    public function add_submenu()
+    {
         add_submenu_page(
             "OPENDIRECTORY_page",
             "Customize Directory",
@@ -46,16 +56,19 @@ Class Setup {
         );
     }
 
-    public function information_html() {
+    public function information_html()
+    {
         require_once OPENDIRECTORY_PATH . "/templates/info.php";
     }
 
-    public function settings_html() {
-    	require_once OPENDIRECTORY_PATH . "/templates/settings.php";
+    public function settings_html()
+    {
+        require_once OPENDIRECTORY_PATH . "/templates/settings.php";
     }
-	public function save_settings() {
-		if (isset($_POST['opendirectory_submit'])) {
-            if(!isset($_POST['opendirectory_nonce']) || empty($_POST['opendirectory_nonce'])){
+    public function save_settings()
+    {
+        if (isset($_POST['opendirectory_submit'])) {
+            if (!isset($_POST['opendirectory_nonce']) || empty($_POST['opendirectory_nonce'])) {
                 return;
             }
             $data_input_nonce = sanitize_text_field(wp_unslash($_POST['opendirectory_nonce']));
@@ -70,19 +83,19 @@ Class Setup {
                 return;
             }
 
-            if(!isset($_POST['opendirectory']) || empty($_POST['opendirectory'])){
+            if (!isset($_POST['opendirectory']) || empty($_POST['opendirectory'])) {
                 return;
             }
 
-            if(!(isset($_POST['opendirectory']) && !empty($_POST['opendirectory']))){
+            if (!(isset($_POST['opendirectory']) && !empty($_POST['opendirectory']))) {
                 return;
             }
             $modified_data = $this->sanitize_array(wp_unslash($_POST['opendirectory']));
 
             // check for name is valid and it should between 2 to 20 words
-            if (!preg_match("/^[a-zA-Z\s]{2,15}$/", $modified_data['name'])) {
+            if (!preg_match("/^[a-zA-Z\s]{2,25}$/", $modified_data['name'])) {
                 add_action('admin_notices', function () {
-                    echo '<div class="notice notice-error is-dismissible"><p>'.esc_html("Name is not valid! It should be between 2 to 15 words").'</p></div>';
+                    echo '<div class="notice notice-error is-dismissible"><p>'.esc_html("Name is not valid! It should be between 2 to 25 words").'</p></div>';
                 });
                 return;
             }
@@ -94,8 +107,8 @@ Class Setup {
                 });
             }
         }
-	}
-	/**
+    }
+    /**
      * Sanitize The Array
      * @param array $input_array
      */
@@ -114,15 +127,15 @@ Class Setup {
     public function template_override($template)
     {
         global $post;
-        if(is_page()) {
-            if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'opendirectory') ){
+        if (is_page()) {
+            if (is_a($post, 'WP_Post') && has_shortcode($post->post_content, 'opendirectory')) {
                 $new_template = OPENDIRECTORY_PATH . '/templates/pages-opendir.php';
                 if ('' != $new_template) {
                     return $new_template;
                 }
                 return $template;
             }
-                return $template;
+            return $template;
         }
         return $template;
     }

@@ -9,9 +9,9 @@
  * Author URI: https://profiles.wordpress.org/kmfoysal06
  * Tags: opendirectory, directory listing
  * Requires at least: 5.0
- * Version: 1.2
+ * Version: 1.2.1
+ * Stable tag: 1.2.1
  * Tested up to: 6.7
- * Stable tag: 1.0
  * Requires PHP: 7.0
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
