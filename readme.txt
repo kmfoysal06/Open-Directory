@@ -3,7 +3,7 @@ Contributors: kmfoysal06
 Tags: opendirectory, directory listing
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 Requires PHP: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -16,7 +16,7 @@ Provide you a listing and insert listing in front side and you can control how u
 === Installation ===
 1. Upload the `open-directory` Folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-2. Visit CPR from Admin Dashboard and add post types via creating new posts.
+2. Visit Open Directory From WordPress Admin Dashboard And Customize Everything About Directory
 
 == Usage ==
 1. Go to the Admin Dashboard.
