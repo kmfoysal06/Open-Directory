@@ -79,3 +79,4 @@ $opendirectory_insert_page = get_permalink(get_page_by_path('opendirectory_inser
 wp_reset_postdata();
 ?>
 </div>
+<a href="<?php echo esc_url($opendirectory_insert_page) ?>"><?php echo esc_html("Insert " . $opendirectory_name); ?></a>

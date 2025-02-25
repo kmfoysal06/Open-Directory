@@ -24,3 +24,10 @@ Provide you a listing and insert listing in front side and you can control how u
 3. With That You Can Configure Your Every Rules of The Directory (insert rule,directory name, directory privacy etc.)
 4. You Can Enable and Disable The Directory From There
 5. When a Directory is Enabled Two Pages Will Automatically Created for Listing and Inserting New List Item
+
+== Screenshots ==
+1. Basic Informations About The Directory
+2. Directory Customization
+3. Generated Directory Listing Page
+4. Generated Insert Page for User
+5. Generated Insert Page for Non User
